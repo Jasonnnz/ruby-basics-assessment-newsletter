@@ -30,9 +30,11 @@ ARTICLES = [
 def calculate_recipients
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
+  SUBSCRIBERS.select { |subscriber| !UNSUBSCRIBED.include?(subscriber)}
+  binding.pry
 end
 
-def first_n_articles(number_of_articles
+def first_n_articles(number_of_articles)
   ARTICLES.first(number_of_articles)
 end
 
@@ -80,7 +82,6 @@ def print_newsletter(number)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
 end
 
 def run
